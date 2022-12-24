@@ -1,4 +1,7 @@
-<?php session_start();
+<?php
+session_start();
+include('dbconnect.php');
+include('online.php');
 $user = mysqli_query($connectuser, "SELECT * FROM `Users` WHERE `id` = '$id'");
 $user = mysqli_fetch_all($user);
 ?>
@@ -15,7 +18,7 @@ $user = mysqli_fetch_all($user);
     <title>КАЗИНО МИР ФАРТА!!!</title>
 </head>
 <body>
-    <div class="menu"><div class="title">КАЗИНО <span style="color: red;">МИР ФАРТА</span>!!!</div><a href="/" class="exit">Назад</a></div>
+    <div class="menu"><div class="title">КАЗИНО <span style="color: red;">МИР ФАРТА</span>!!!</div><a href="/" class="options">Назад</a></div>
     <div style="margin: 8px;">
     <h1>Товарищ, вращайте барабан!</h1>
     <h2><?php if (isset($_SESSION['all_points'])) echo "У вас всего: ".$_SESSION['all_points']." очков!";?></h2>

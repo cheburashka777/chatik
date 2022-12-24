@@ -1,6 +1,7 @@
 <?php
 session_start();
 if ($_SESSION['loginin'] == 1 AND $_SESSION['deleted'] == 0) {
+unset($error);
 include('dbconnect.php');
 include('online.php');
 include('time.php');
@@ -24,6 +25,8 @@ $user = mysqli_fetch_all($user);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="search.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <? if ($user[0][8] != 'style') { ?>
     <link rel="stylesheet" href="css/<? echo $user[0][8];?>.css">
@@ -37,7 +40,7 @@ $user = mysqli_fetch_all($user);
         <div class="messages">
             <?php
             if (!isset($_GET['sel']) OR $_GET['sel'] == null) {
-               ?><div class="alert"><h3 style="text-align: center; margin: 0;">Внимание!!</h3>Общий чат не работает по причине неправильной кодировки. <br> Что с этим делать — не знаю((( <img src="http://www.kolobok.us/smiles/standart/sad.gif"></div><?php
+               ?><div class="alert_chat"><h3 class="h3alert" style="text-align: center; margin: 0;">Внимание!!</h3>Общий чат не работает по причине неправильной кодировки. <br> Что с этим делать — не знаю((( <img src="http://www.kolobok.us/smiles/standart/sad.gif"></div><?php
             foreach ($pubmessages as $pubmessage) {
             ?>
                 <div>
@@ -108,8 +111,6 @@ $user = mysqli_fetch_all($user);
         online.src = 'avatar/default/online_iphone.png';
     }
     </script>
-    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
-    <script src="search.js"></script>
 </body>
 </html>
 <?php

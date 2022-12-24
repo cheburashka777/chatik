@@ -1,0 +1,427 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+h3:not(.h3alert) {
+    color: rgb(117, 185, 231);
+    border-bottom: 1px solid gray;
+}
+
+h4 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(117, 185, 231);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button, .sumbit {
+    outline: none;
+    background: linear-gradient(rgb(131, 205, 255), rgb(97, 153, 190));
+    padding: 5px;
+    height: 30px;
+    border: 1px solid rgb(81, 133, 170);
+    border-radius: 3px;
+    color: white;
+}
+
+button:hover, .sumbit:hover {
+    background: linear-gradient(rgb(137, 208, 255), rgb(109, 170, 211));
+}
+
+button:active, .sumbit:active {
+    outline: none;
+    background: linear-gradient(rgb(84, 132, 163), rgb(105, 166, 206));
+    padding-top: 7px;
+}
+
+.log {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.log input {
+    width: 80%;
+    height: 30px;
+}
+
+.log button {
+    width: 80%;
+}
+
+.login {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 150px;
+    margin-top: -120px;
+    margin-left: -200px;
+    text-align: center;
+}
+
+.register {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 150px;
+    margin-top: -120px;
+    margin-left: -200px;
+    text-align: center;
+}
+
+.login input {
+    width: 100%;
+    height: 30px;
+}
+
+.register input {
+    width: 100%;
+    height: 30px;
+}
+
+.login button {
+    width: 80%;
+    margin-top: 20px;
+}
+
+.register button {
+    width: 80%;
+    margin-top: 20px;
+}
+
+.chatlist {
+    float: left;
+    border: 1px solid rgb(158, 158, 158);
+    width: 20%;
+    height: 500px;
+    position: relative;
+}
+
+.chat {
+    float: right;
+    border-right: 1px solid rgb(158, 158, 158);
+    border-bottom: 1px solid rgb(158, 158, 158);
+    border-top: 1px solid rgb(158, 158, 158);
+    width: 80%;
+    height: 500px;
+    position: relative;
+}
+
+.menu {
+    border-bottom: 3px solid rgb(117, 185, 231);
+    padding: 10px;
+    display: flex;
+}
+
+.title {
+    color: rgb(117, 185, 231);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.companian {
+    color: rgb(117, 185, 231);
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px 10px 4px 10px;
+    border-bottom: 3px solid rgb(117, 185, 231);
+    line-height: 16px;
+}
+
+.options {
+    color: gray;
+    float: right;
+    line-height: 25px;
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.exit {
+    color: gray;
+    line-height: 25px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.dialogs {
+    overflow: auto;
+    position: relative;
+}
+
+.dialogs img {
+    margin-right: 3px;
+}
+
+.user {
+    display: flex;
+    border-bottom: 1px solid rgb(117, 185, 231);
+    color: rgb(117, 185, 231);
+    padding-left: 5px;
+    padding-right: 10px;
+    line-height: 25px;
+}
+
+.dialog {
+    display: block;
+    border-bottom: 1px solid rgb(117, 185, 231);
+    color: rgb(117, 185, 231);
+    padding-left: 5px;
+}
+
+.avatar_dialog {
+    display: block;
+    border-top: 1px solid rgb(117, 185, 231);
+    color: rgb(117, 185, 231);
+    padding-left: 5px;
+    width: 100%;
+}
+
+.selected {
+    display: block;
+    color: white;
+    background-color: rgb(117, 185, 231);
+    border: rgb(185, 211, 228);
+}
+
+.online {
+    color: gray;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.autor {
+    font-weight: bold;
+    color: rgb(117, 185, 231);
+}
+
+.time {
+    color: gray;
+    float: right;
+    text-align: right;
+}
+
+.messages {
+    padding: 10px;
+    overflow: auto;
+    height: 300px;
+}
+
+.message {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0px 2px 5px;
+}
+
+.message textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+}
+
+.sumbit {
+    padding: 2px 5px;
+    float: right;
+    margin-top: 3px;
+}
+
+.avatar {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.name {
+    display: inline-block;
+}
+
+.chatlist_mobile {
+    display: none;
+    width: 100%;
+}
+
+.delete {
+    color: gray;
+    float: right;
+    text-align: right;
+    margin-right: 5px;
+    margin-left: 8px;
+}
+
+.admin {
+    color: brown;
+    font-weight: bold;
+}
+
+.admin_dialog {
+    display: block;
+    border-top: 1px solid rgb(117, 185, 231);
+    color: rgb(117, 185, 231);
+    padding-left: 5px;
+    width: 100%;
+}
+
+.delete_dialog {
+    padding: 10px;
+}
+
+.alert {
+    background: rgb(255, 158, 158);
+    border: 1px solid black;
+    margin: 0px auto;
+    width: 50%;
+    padding: 5px;
+}
+
+.alert_chat {
+    background: rgb(255, 158, 158);
+    border: 1px solid black;
+    margin: 0px auto;
+    width: 50%;
+    padding: 5px;
+    font-size: 12px;
+}
+
+/* .delete_dialog {
+    position: fixed;
+    width: 400px;
+    height: 250px;
+    border: 5px solid rgb(117, 185, 231);
+    border-radius: 3px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+.parameters {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.casino {
+    max-width: 200px;
+}
+
+.casino img {
+    width: 100%;
+}
+
+@media screen and (max-width: 630px) {
+    .chatlist {
+        display: none;
+    }
+
+    .chatlist_mobile {
+        display: block;
+    }
+
+    .chatlist_mobile .closed {
+        transition: all 0.5s;
+    }
+
+    .chat {
+        width: 100%;
+        border-right: 0;
+    }
+
+    .messages div {
+        min-height: 1.35em;
+        overflow: auto;
+    }
+
+    .dialog, .avatar_dialog, .admin_dialog {
+        line-height: 25px;
+    }
+    
+   .alert_chat {
+       width: 90%;
+    }
+
+    .dialogs {
+        transition: all 0.5s;
+    }
+
+    .parameters {
+        position: static;
+    }
+
+    /* @keyframes vis {
+        0% {
+            height: 0;
+            overflow: hidden;
+        }
+
+        100% {
+            height: auto;
+            overflow: hidden;
+        }
+    }
+
+    @keyframes vi {
+        0% {
+            height: auto;
+            overflow: hidden;
+        }
+
+        100% {
+            height: 0;
+            overflow: hidden;
+            display: none;
+        }
+    } */
+}
+
+@media screen and (max-width: 405px) {
+    .log {
+        position: static;
+        transform: translate(0%, 180%);
+    }
+
+    .login {
+        margin-left: 0;
+        left: 0;
+        width: auto;
+    }
+	
+	.register {
+        margin-left: 0;
+        left: 0;
+        width: auto;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(35, 35, 35);
+        color: white;
+    }
+
+    .alert_chat {
+        color: black;
+        background-color: rgb(255, 92, 92);
+    }
+
+    textarea {
+        background-color: black;
+        color: white;
+    }
+}

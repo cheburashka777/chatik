@@ -2,6 +2,7 @@
 session_start();
 if ($_SESSION['loginin'] == 1) {
 include('dbconnect.php');
+include('online.php');
 
 $id = $_SESSION['id'];
 $theme = $_POST['theme'];
@@ -31,6 +32,12 @@ $user = mysqli_fetch_all($user);
     </div>
     <div style="margin: 8px;">
 
+    <? if ($_SESSION['error']) { ?>
+    <div class="alert">
+        <b><?=$_SESSION['error'];?></b>
+    </div>
+    <? } ?>
+
         <h3>Тема</h2>
         <form action="options.php" method="post">
             <select name="theme">
@@ -48,7 +55,7 @@ $user = mysqli_fetch_all($user);
         <tr>
             <td width="220">
                 <h4 style="margin-bottom: 5px;">Ваша текущая аватарина:</h4>
-                <img src="<?php if ($online[4] != NULL) {echo '/avatars/'.$online[4];} else {echo '/avatars/default/default.png';} ?>" width="200">
+                <img src="<?php if ($user[0][4] != NULL) {echo '/avatars/'.$user[0][4];} else {echo '/avatars/default/default.png';} ?>" width="200">
             </td>
             <td>
                 <form action="vendor/loadavatar.php" method="post" enctype="multipart/form-data" style="display: inline-block;">
@@ -64,4 +71,4 @@ $user = mysqli_fetch_all($user);
     </div>
 </body>
 </html>
-<?}?>
+<?$_SESSION['error'] = null;}?>

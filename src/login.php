@@ -2,7 +2,13 @@
 session_start();
 include('dbconnect.php');
 
-if (preg_match('/[^a-zA-Z]+/', $_POST['password'])) {
+if (strlen($_POST['password']) < 5) {
+    $_SESSION['error'] = 'Пароль слишком короткий.';
+} elseif ($_POST['password'] > 32) {
+    $_SESSION['erroreg'] = 'Пароль слишком длинный';
+}
+
+if (preg_match('/[^a-zA-Z]+/', trim($_POST['password']))) {
     $_SESSION['error'] = 'Пароль содержит недопустимые символы';
 }
 
@@ -11,7 +17,7 @@ if (!empty($_SESSION['error'])) {
     unset($_SESSION['error']);
 }
 
-$password = md5($_POST['password']);
+$password = md5(trim($_POST['password']));
 
 $user = mysqli_query($connectuser, "SELECT * FROM `Users` WHERE `password` = '$password'");
 $user = mysqli_fetch_row($user);

@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(35, 35, 35);
+    color: white;
+}
+
+.alert_chat {
+    color: black;
+    background-color: rgb(255, 92, 92);
+}
+
+textarea {
+    background-color: black;
+    color: white;
+}

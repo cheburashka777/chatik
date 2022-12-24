@@ -13,6 +13,8 @@ if ($_POST['login'] == NULL OR $_POST['password'] == NULL) {
     $_SESSION['erroreg'] = 'Логин или пароль слишком длинные';
     header("Location: /register.php");
     exit();
+} elseif (strlen($_POST['password']) < 5) {
+    $_SESSION['error'] = 'Пароль слишком короткий.';
 }
 
 $login = $_POST['login'];
